@@ -19,7 +19,7 @@
 
         <div class="header">
             <div class="logo">
-                <img src="./assets/image/Group.png" alt="">
+                <img src="./assets/image/IMG_3417-removebg-preview.png" alt="">
             </div>
             <div class="menu-items">
                 <ul>
@@ -48,11 +48,33 @@
                     <button class="btn-mob">
                         Contact Us
                     </button>
-                    <img src="./assets/image/align-right.png" alt="">
+                    <img src="./assets/image/align-right.png" alt="" id="burger-menu">
                 </div>
             </div>
         </div>
     </section>
+
+    <div id="overlay" class="overlay hidden"></div> <!-- Overlay -->
+
+    <div id="drawer" class="drawer hidden">
+        <button id="close-drawer" class="close-btn">X</button>
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Services</a>
+            </li>
+            <li>
+                <a href="#">Portfolio</a>
+            </li>
+        </ul>
+        <button class="btnn">
+            Contact us
+        </button>
+    </div>
+
+
     <section class="main-section">
         <div class="container">
 
@@ -73,22 +95,65 @@
     <section class="video-section">
         <div class="slider">
             <div class="arrowws">
-                <img src="./assets/image/Arrow-left.png" alt="">
-                <img src="./assets/image/Arrow-right.png" alt="">
+                <img src="./assets/image/Arrow-left.png" class="arrow-left" alt="Left Arrow">
+                <img src="./assets/image/Arrow-right.png" class="arrow-right" alt="Right Arrow">
             </div>
-            <div class="slide-1">
-                <div class="video">
-                    <img src="./assets/image/Image [process-video-thumbnail].png" alt="">
+            <div class="slides-container">
+                <div class="slide">
+                    <div class="video">
+                        <img src="./assets/image/312SanColla-05.jpg" alt="Thumbnail" class="thumbnail">
+                        <video class="video-element" width="100%" height="100%" controls style="display: none;">
+                            <source src="./assets/videos/realEstateZoomOut.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="./assets/image/Group 1321314311.png" class="playbutton" data-video="0"
+                            alt="Play Button">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="video">
+                        <img src="./assets/image/DJI_20240301150738_0039_D.jpg" alt="Thumbnail" class="thumbnail">
+                        <video class="video-element" width="100%" height="100%" controls style="display: none;">
+                            <source src="./assets/videos/belmontRollerCoaster.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="./assets/image/Group 1321314311.png" class="playbutton" data-video="1"
+                            alt="Play Button">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="video">
+                        <img src="./assets/image/belmontParkOverWater.jpg" alt="Thumbnail" class="thumbnail">
+                        <video class="video-element" width="100%" height="100%" controls style="display: none;">
+                            <source src="./assets/videos/belmontRollerCoaster.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="./assets/image/Group 1321314311.png" class="playbutton" data-video="2"
+                            alt="Play Button">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="video">
+                        <img src="./assets/image/webPic1.jpg" alt="Thumbnail" class="thumbnail">
+                        <video class="video-element" width="100%" height="100%" controls style="display: none;">
+                            <source src="./assets/videos/realEstateOrbital.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="./assets/image/Group 1321314311.png" class="playbutton" data-video="3"
+                            alt="Play Button">
+                    </div>
                 </div>
             </div>
         </div>
         <div class="dots">
             <div class="dot active"></div>
-            <div class="dot "></div>
-            <div class="dot "></div>
-            <div class="dot "></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
         </div>
     </section>
+
+
 
 
     <section class="services-section">
@@ -150,8 +215,11 @@
         <div class="images">
             <img src="./assets/image/car@4x.webp.png" alt="">
             <img src="./assets/image/blowout@4x.webp.png" alt="">
-            <img src="./assets/image/car@4x.webp.png" alt="">
-            <img src="./assets/image/blowout@4x.webp.png" alt="">
+            <img src="./assets/image/DJI_20240301150738_0039_D.JPG" alt="">
+            <img src="./assets/image/belmontParkOverWater.JPG" alt="">
+            <img src="./assets/image/41903.jpg" alt="">
+            <img src="./assets/image/CieloVista-11.jpg" alt="">
+            <img src="./assets/image/webPic1.jpg" alt="">
 
         </div>
 
@@ -174,56 +242,47 @@
                 <div class="row2 ">
                     <div class="column">
                         <div class="name">
-                            <label for="">
-                                Full name *
-                            </label>
-                            <input type="text" placeholder="John David">
+                            <label for="fullName">Full name *</label>
+                            <input type="text" id="fullName" placeholder="John David">
                         </div>
                     </div>
                     <div class="column">
                         <div class="name">
-                            <label for="">
-                                Full Email *
-                            </label>
-                            <input type="text" placeholder="example@yourmail.com">
+                            <label for="email">Full Email *</label>
+                            <input type="email" id="email" placeholder="example@yourmail.com">
                         </div>
                     </div>
                 </div>
                 <div class="row2">
                     <div class="column">
                         <div class="name">
-                            <label for="">
-                                Phone *
-                            </label>
-                            <input type="text" placeholder="your number here">
+                            <label for="phone">Phone *</label>
+                            <input type="text" id="phone" placeholder="your number here">
                         </div>
                     </div>
                     <div class="column">
                         <div class="name">
-                            <label for="">
-                                Subject *
-                            </label>
-                            <input type="text" placeholder="How can we Help">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" placeholder="How can we Help">
                         </div>
                     </div>
                 </div>
                 <div class="row2">
                     <div class="column">
                         <div class="name">
-                            <label for="">
-                                We can help you?
-                            </label>
-                            <textarea name="" placeholder="Type your message here..." id=""></textarea>
+                            <label for="message">We can help you?</label>
+                            <textarea id="message" placeholder="Type your message here..."></textarea>
                         </div>
                     </div>
-
                 </div>
                 <div class="text-center">
-                    <button class="submit">
-                        Send Message
-                    </button>
+                    <a href="#" class="submit" style="text-decoration: none;" onclick="sendEmail(event)">Send
+                        Message</a>
                 </div>
             </div>
+
+
+
         </div>
     </section>
 
@@ -233,11 +292,7 @@
 
             <div class="footer-content">
 
-                <div class="footer-desc">
-                    <p>
-                        Drone gives you the blocks and components you need to create a truly professional website.
-                    </p>
-                </div>
+
                 <!-- <div class="company">
                     <h3>
                         Company
@@ -293,6 +348,11 @@
                         </li>
                     </ul>
                 </div>
+                <div class="footer-desc">
+                    <p>
+                        Drone gives you the blocks and components you need to create a truly professional website.
+                    </p>
+                </div>
                 <!-- <div class="newsletter">
                     <h3>
                         Newsletter
@@ -316,6 +376,109 @@
         </div>
     </section>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slidesContainer = document.querySelector('.slides-container');
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            const arrowLeft = document.querySelector('.arrow-left');
+            const arrowRight = document.querySelector('.arrow-right');
+            let currentIndex = 0;
+
+            function updateSlider() {
+                const offset = -currentIndex * 100;
+                slidesContainer.style.transform = `translateX(${offset}%)`;
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[currentIndex].classList.add('active');
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                if (currentIndex < 0) currentIndex = slides.length - 1;
+                if (currentIndex >= slides.length) currentIndex = 0;
+                updateSlider();
+            }
+
+            function playVideo(playButton) {
+                const videoElement = playButton.closest('.video').querySelector('.video-element');
+                const thumbnail = playButton.closest('.video').querySelector('.thumbnail');
+
+                // Hide the thumbnail and play button
+                thumbnail.style.display = 'none';
+                playButton.style.display = 'none';
+
+                // Show the video
+                videoElement.style.display = 'block';
+                videoElement.play(); // Start playing the video
+            }
+
+            arrowLeft.addEventListener('click', () => goToSlide(currentIndex - 1));
+            arrowRight.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => goToSlide(index));
+            });
+
+            // Add event listeners to all play buttons
+            const playButtons = document.querySelectorAll('.playbutton');
+            playButtons.forEach(playButton => {
+                playButton.addEventListener('click', () => playVideo(playButton));
+            });
+
+            updateSlider();
+        });
+    </script>
+    <script>
+        const burgerMenu = document.getElementById('burger-menu');
+        const drawer = document.getElementById('drawer');
+        const closeDrawer = document.getElementById('close-drawer');
+        const overlay = document.getElementById('overlay');
+
+        burgerMenu.addEventListener('click', () => {
+            overlay.classList.remove('hidden');
+            overlay.classList.add('show');
+            drawer.classList.remove('hidden');
+            drawer.classList.add('show');
+        });
+
+        closeDrawer.addEventListener('click', () => {
+            drawer.classList.remove('show');
+            overlay.classList.remove('show');
+            setTimeout(() => {
+                drawer.classList.add('hidden');
+                overlay.classList.add('hidden');
+            }, 300);
+        });
+
+        // Hide the drawer and overlay when clicking on the overlay
+        overlay.addEventListener('click', () => {
+            drawer.classList.remove('show'); // 
+            overlay.classList.remove('show');
+            setTimeout(() => {
+                drawer.classList.add('hidden');
+                overlay.classList.add('hidden');
+            }, 300); // Match this duration to the CSS transition duration
+        });
+
+
+    </script>
+    <script>
+        function sendEmail(event) {
+            event.preventDefault();
+
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            const mailtoLink = `mailto:cahsan562@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+                `Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`
+            )}`;
+
+            window.location.href = mailtoLink;
+        }
+    </script>
 
 </body>
 

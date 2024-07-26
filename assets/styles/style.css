@@ -59,6 +59,82 @@ body {
     height: auto;
 }
 
+
+.hidden {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 9998; /* Below the drawer */
+    transition: opacity 0.3s ease; /* Smooth fade */
+    opacity: 0; /* Start invisible */
+}
+
+.overlay.show {
+    opacity: 1; /* Fully visible */
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px; /* Adjust width as needed */
+    height: 100%;
+    background: white; /* Background color */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3); /* Optional shadow */
+    padding: 20px; /* Optional padding */
+    transition: transform 0.3s ease; /* Smooth opening */
+    transform: translateX(100%); /* Hide drawer off-screen */
+    z-index: 99999; /* Above the overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.drawer.show {
+    transform: translateX(0); /* Show drawer */
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px; /* Adjust size as needed */
+    cursor: pointer;
+    margin-bottom: 20px; /* Spacing from the top */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.drawer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+}
+
+.drawer ul li a {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    color: black;
+    font-family: 'Josefin Sans', sans-serif;
+    text-decoration: none;
+    padding: 0 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+
 .menu-items {
     border-radius: 50px 0px 0px 50px;
     padding-right: 40px;
@@ -164,6 +240,8 @@ body {
 }
 
 
+
+
 .video-section {
     height: 449.02px;
     width: 100%;
@@ -171,30 +249,67 @@ body {
     position: relative;
 }
 
-
 .slider {
     position: relative;
-
+    overflow: hidden;
 }
 
+.slides-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative; /* Added to position children correctly */
+}
 
 .video {
     max-width: 1207px;
     width: 100%;
-    height: 470px;
+    height: 449px;
     border-radius: 21.41px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -40px;
-
+    position: relative;
 }
-.video img{
+
+.thumbnail {
     max-width: 100%;
     height: 100%;
     object-fit: cover;
     width: 100%;
     border-radius: 21.41px;
-    margin-top: -14px;
+    position: absolute; /* Added to position it on top of the video */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensures thumbnail is on top */
+}
+
+.video-element {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 21.41px;
+    display: none; /* Hide the video initially */
+    position: absolute; /* Added to position it on top of the thumbnail */
+    top: 0;
+    left: 0;
+    z-index: 0; /* Ensure video is behind thumbnail */
+}
+
+.playbutton {
+    max-width: 128px !important;
+    width: 100% !important;
+    height: auto !important;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure play button is above both thumbnail and video */
 }
 
 .arrowws {
@@ -203,13 +318,12 @@ body {
     position: absolute;
     width: 100%;
     top: 40%;
+    z-index: 99;
 }
 
 .arrowws img {
     cursor: pointer;
 }
-
-
 
 .dots {
     display: flex;
@@ -217,6 +331,7 @@ body {
     gap: 10px;
     align-items: center;
     padding-bottom: 20px;
+    margin-top: 20px;
 }
 
 .dot {
@@ -225,12 +340,13 @@ body {
     background: #D9D9D9;
     border-radius: 50%;
     cursor: pointer;
-
 }
 
 .active {
     background: #4862FF;
 }
+
+
 
 .services-section {
     padding: 40px 0px;
@@ -417,18 +533,22 @@ body {
 }
 
 .footer-desc {
-    max-width: 294px;
+    max-width: 465px;
     width: 100%;
+    /* margin: auto; */
+    margin-left: 13rem;
 }
 
 .footer-desc p {
     color: #E0E0E0;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 24px;
+    text-align: center;
 }
 
 .footer-content {
     display: flex;
+ align-items: center;
 
 }
 
@@ -467,11 +587,11 @@ body {
 }
 
 
-.help {
+/* .help {
     max-width: 141px;
     width: 100%;
     margin: auto;
-}
+} */
 
 .help h3 {
     color: #CAE0FF;
@@ -687,11 +807,11 @@ body {
 
     .video {
 
-        height: auto;
+        height: 201px;
         border-radius: 21.41px;
         margin-left: auto;
         margin-right: auto;
-        margin-top: -40px;
+        
 
     }
 
@@ -762,6 +882,15 @@ body {
     .footer-desc {
         max-width: 100%;
         text-align: center;
+        margin: 0;
+    }
+    .video img ,.video .video{
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        border-radius: 21.41px;
+        /* margin-top: -14px; */
     }
 }
 
@@ -773,7 +902,7 @@ body {
 
     .video {
         max-width: 288px;
-        height: 213px;
+        height: 201px;
     }
 
      .row2{
