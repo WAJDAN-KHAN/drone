@@ -24,22 +24,23 @@
             <div class="menu-items">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="#home">
                             Home
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#services">
                             Services
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#portfolio">
                             Portfolio
                         </a>
                     </li>
                 </ul>
-                <button class="btnn">
+                <button class="btnn"
+                    onclick="document.getElementById('contact-us').scrollIntoView({ behavior: 'smooth' })">
                     Contact us
                 </button>
             </div>
@@ -60,22 +61,22 @@
         <button id="close-drawer" class="close-btn">X</button>
         <ul>
             <li>
-                <a href="#">Home</a>
+                <a href="#home">Home</a>
             </li>
             <li>
-                <a href="#">Services</a>
+                <a href="#services">Services</a>
             </li>
             <li>
-                <a href="#">Portfolio</a>
+                <a href="#portfolio">Portfolio</a>
             </li>
         </ul>
-        <button class="btnn">
+        <button class="btnn" onclick="document.getElementById('contact-us').scrollIntoView({ behavior: 'smooth' })">
             Contact us
         </button>
     </div>
 
 
-    <section class="main-section">
+    <section class="main-section" id="home">
         <div class="container">
 
             <div class="main-title">
@@ -156,7 +157,7 @@
 
 
 
-    <section class="services-section">
+    <section class="services-section" id="services">
         <div class="container">
             <div class="text-center">
                 <h1 class="service-title">
@@ -205,7 +206,7 @@
             </div>
         </div>
     </section>
-    <section class="portfolio-section">
+    <section class="portfolio-section" id="portfolio">
 
         <div class="text-center">
             <h1 class="service-title">
@@ -226,7 +227,7 @@
 
     </section>
 
-    <section class="contact-us">
+    <section class="contact-us" id="contact-us">
         <div class="container-contact">
 
             <div class="text-center">
@@ -441,27 +442,29 @@
             drawer.classList.add('show');
         });
 
-        closeDrawer.addEventListener('click', () => {
+        closeDrawer.addEventListener('click', closeDrawerFunction);
+        overlay.addEventListener('click', closeDrawerFunction);
+
+        // Function to close the drawer
+        function closeDrawerFunction() {
             drawer.classList.remove('show');
             overlay.classList.remove('show');
             setTimeout(() => {
                 drawer.classList.add('hidden');
                 overlay.classList.add('hidden');
-            }, 300);
-        });
-
-        // Hide the drawer and overlay when clicking on the overlay
-        overlay.addEventListener('click', () => {
-            drawer.classList.remove('show'); // 
-            overlay.classList.remove('show');
-            setTimeout(() => {
-                drawer.classList.add('hidden');
-                overlay.classList.add('hidden');
             }, 300); // Match this duration to the CSS transition duration
-        });
+        }
 
+        // Add click event listener to each menu item
+        const menuItems = drawer.querySelectorAll('ul li a');
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                closeDrawerFunction(); // Close the drawer when a menu item is clicked
+            });
+        });
 
     </script>
+
     <script>
         function sendEmail(event) {
             event.preventDefault();
