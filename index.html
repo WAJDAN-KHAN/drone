@@ -207,12 +207,13 @@
         </div>
     </section>
     <section class="portfolio-section" id="portfolio">
+
         <div class="text-center">
             <h1 class="service-title">
                 <span style="color: #4862FF;"> Portfolio</span>
             </h1>
         </div>
-        <div class="images" id="image-container">
+        <div class="images">
             <img src="./assets/image/car@4x.webp.png" alt="">
             <img src="./assets/image/blowout@4x.webp.png" alt="">
             <img src="./assets/image/DJI_20240301150738_0039_D.JPG" alt="">
@@ -220,9 +221,11 @@
             <img src="./assets/image/41903.jpg" alt="">
             <img src="./assets/image/CieloVista-11.jpg" alt="">
             <img src="./assets/image/webPic1.jpg" alt="">
-        </div>
-    </section>
 
+        </div>
+
+
+    </section>
 
     <section class="contact-us" id="contact-us">
         <div class="container-contact">
@@ -478,57 +481,6 @@
 
             window.location.href = mailtoLink;
         }
-    </script>
-    <script>
-        const imageContainer = document.getElementById('image-container');
-
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        imageContainer.addEventListener('mousedown', (e) => {
-            isDown = true;
-            imageContainer.classList.add('active');
-            startX = e.pageX - imageContainer.offsetLeft;
-            scrollLeft = imageContainer.scrollLeft;
-        });
-
-        imageContainer.addEventListener('mouseleave', () => {
-            isDown = false;
-            imageContainer.classList.remove('active');
-        });
-
-        imageContainer.addEventListener('mouseup', () => {
-            isDown = false;
-            imageContainer.classList.remove('active');
-        });
-
-        imageContainer.addEventListener('mousemove', (e) => {
-            if (!isDown) return; // Stop the fn from running
-            e.preventDefault();
-            const x = e.pageX - imageContainer.offsetLeft;
-            const walk = (x - startX) * 2; // The multiplier controls the scroll speed
-            imageContainer.scrollLeft = scrollLeft - walk;
-        });
-
-        // Touch support for mobile devices
-        imageContainer.addEventListener('touchstart', (e) => {
-            isDown = true;
-            startX = e.touches[0].pageX - imageContainer.offsetLeft;
-            scrollLeft = imageContainer.scrollLeft;
-        });
-
-        imageContainer.addEventListener('touchend', () => {
-            isDown = false;
-        });
-
-        imageContainer.addEventListener('touchmove', (e) => {
-            if (!isDown) return;
-            const x = e.touches[0].pageX - imageContainer.offsetLeft;
-            const walk = (x - startX) * 2; // The multiplier controls the scroll speed
-            imageContainer.scrollLeft = scrollLeft - walk;
-        });
-
     </script>
 
 </body>

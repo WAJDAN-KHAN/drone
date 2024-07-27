@@ -413,6 +413,7 @@ html {
 }
 
 
+
 .portfolio-section {
     padding: 40px 0px;
 }
@@ -421,33 +422,30 @@ html {
     padding-top: 20px;
     display: flex;
     gap: 20px;
-    overflow-x: scroll; /* Allow horizontal scrolling */
-    overflow-y: hidden; /* Hide vertical scrolling */
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer 10+ */
+    overflow: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
 }
 
 .images::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Safari and Chrome */
+    display: none;
+    /* Safari and Chrome */
 }
 
 .images img {
-    max-width: 400px; /* Limit the max width of images */
-    width: 100%; /* Set width to 100% to fill the container */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 400px;
+    width: 100%;
+    height: auto;
     border-radius: 18px;
-    user-select: none; /* Prevent text selection on double-click */
-    -webkit-user-drag: none; /* Prevent the default drag behavior in Webkit browsers */
-    outline: none; /* Remove focus outline */
-    background-color: transparent; /* Prevent blue background on press */
-}
-
-/* Prevent default focus and active styles */
-.images img:focus, 
-.images img:active {
-    outline: none; /* Remove outline */
-    background-color: transparent; /* Ensure background remains transparent */
-    border: none; /* Remove any border if applied */
+    user-select: none;
+    /* Prevents text selection on double-click */
+    -webkit-user-drag: none;
+    /* Prevents the default drag behavior in Webkit browsers */
+    outline: none;
+    /* Removes the focus outline */
 }
 
 
