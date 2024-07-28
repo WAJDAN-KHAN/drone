@@ -425,14 +425,13 @@ html {
     overflow: auto;
     white-space: nowrap;
     scrollbar-width: none;
-    /* Firefox */
     -ms-overflow-style: none;
-    /* Internet Explorer 10+ */
+  
+    background-color: transparent; /* Ensure no background color */
 }
 
 .images::-webkit-scrollbar {
     display: none;
-    /* Safari and Chrome */
 }
 
 .images img {
@@ -441,14 +440,14 @@ html {
     height: auto;
     border-radius: 18px;
     user-select: none;
-    /* Prevents text selection on double-click */
     -webkit-user-drag: none;
-    /* Prevents the default drag behavior in Webkit browsers */
     outline: none;
-    /* Removes the focus outline */
 }
 
-
+.images.active {
+  
+    background-color: transparent; /* Ensure no background color while dragging */
+}
 .contact-us {
     padding: 40px 0px;
     background-image: url('../image/gradient.png');

@@ -19,7 +19,7 @@
 
         <div class="header">
             <div class="logo">
-                <img src="./assets/image/IMG_3417-removebg-preview.png" alt="">
+                <img src="./assets/image/IMG_3419.JPG" alt="">
             </div>
             <div class="menu-items">
                 <ul>
@@ -207,7 +207,6 @@
         </div>
     </section>
     <section class="portfolio-section" id="portfolio">
-
         <div class="text-center">
             <h1 class="service-title">
                 <span style="color: #4862FF;"> Portfolio</span>
@@ -221,10 +220,7 @@
             <img src="./assets/image/41903.jpg" alt="">
             <img src="./assets/image/CieloVista-11.jpg" alt="">
             <img src="./assets/image/webPic1.jpg" alt="">
-
         </div>
-
-
     </section>
 
     <section class="contact-us" id="contact-us">
@@ -463,6 +459,41 @@
             });
         });
 
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const imagesContainer = document.querySelector('.images');
+
+            let isDragging = false;
+            let startX;
+            let scrollLeft;
+
+            imagesContainer.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                imagesContainer.classList.add('active');
+                startX = e.pageX - imagesContainer.offsetLeft;
+                scrollLeft = imagesContainer.scrollLeft;
+            });
+
+            imagesContainer.addEventListener('mouseleave', () => {
+                isDragging = false;
+                imagesContainer.classList.remove('active');
+            });
+
+            imagesContainer.addEventListener('mouseup', () => {
+                isDragging = false;
+                imagesContainer.classList.remove('active');
+            });
+
+            imagesContainer.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = e.pageX - imagesContainer.offsetLeft;
+                const walk = (x - startX) * 2; //scroll-fast
+                imagesContainer.scrollLeft = scrollLeft - walk;
+            });
+        });
     </script>
 
     <script>
