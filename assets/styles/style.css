@@ -3,9 +3,11 @@ body {
     margin: 0;
     padding: 0;
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 .josefin-sans {
     font-family: 'Josefin Sans', sans-serif;
 }
@@ -72,28 +74,40 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    z-index: 9998; /* Below the drawer */
-    transition: opacity 0.3s ease; /* Smooth fade */
-    opacity: 0; /* Start invisible */
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    z-index: 9998;
+    /* Below the drawer */
+    transition: opacity 0.3s ease;
+    /* Smooth fade */
+    opacity: 0;
+    /* Start invisible */
 }
 
 .overlay.show {
-    opacity: 1; /* Fully visible */
+    opacity: 1;
+    /* Fully visible */
 }
 
 .drawer {
     position: fixed;
     top: 0;
     right: 0;
-    width: 300px; /* Adjust width as needed */
+    width: 300px;
+    /* Adjust width as needed */
     height: 100%;
-    background: white; /* Background color */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3); /* Optional shadow */
-    padding: 20px; /* Optional padding */
-    transition: transform 0.3s ease; /* Smooth opening */
-    transform: translateX(100%); /* Hide drawer off-screen */
-    z-index: 99999; /* Above the overlay */
+    background: white;
+    /* Background color */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    /* Optional shadow */
+    padding: 20px;
+    /* Optional padding */
+    transition: transform 0.3s ease;
+    /* Smooth opening */
+    transform: translateX(100%);
+    /* Hide drawer off-screen */
+    z-index: 99999;
+    /* Above the overlay */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,15 +115,18 @@ html {
 }
 
 .drawer.show {
-    transform: translateX(0); /* Show drawer */
+    transform: translateX(0);
+    /* Show drawer */
 }
 
 .close-btn {
     background: none;
     border: none;
-    font-size: 24px; /* Adjust size as needed */
+    font-size: 24px;
+    /* Adjust size as needed */
     cursor: pointer;
-    margin-bottom: 20px; /* Spacing from the top */
+    margin-bottom: 20px;
+    /* Spacing from the top */
     position: absolute;
     top: 20px;
     left: 20px;
@@ -264,7 +281,8 @@ html {
 .slide {
     min-width: 100%;
     box-sizing: border-box;
-    position: relative; /* Added to position children correctly */
+    position: relative;
+    /* Added to position children correctly */
 }
 
 .video {
@@ -283,10 +301,12 @@ html {
     object-fit: cover;
     width: 100%;
     border-radius: 21.41px;
-    position: absolute; /* Added to position it on top of the video */
+    position: absolute;
+    /* Added to position it on top of the video */
     top: 0;
     left: 0;
-    z-index: 1; /* Ensures thumbnail is on top */
+    z-index: 1;
+    /* Ensures thumbnail is on top */
 }
 
 .video-element {
@@ -295,11 +315,14 @@ html {
     object-fit: cover;
     width: 100%;
     border-radius: 21.41px;
-    display: none; /* Hide the video initially */
-    position: absolute; /* Added to position it on top of the thumbnail */
+    display: none;
+    /* Hide the video initially */
+    position: absolute;
+    /* Added to position it on top of the thumbnail */
     top: 0;
     left: 0;
-    z-index: 0; /* Ensure video is behind thumbnail */
+    z-index: 0;
+    /* Ensure video is behind thumbnail */
 }
 
 .playbutton {
@@ -311,7 +334,8 @@ html {
     left: 50%;
     cursor: pointer;
     transform: translate(-50%, -50%);
-    z-index: 2; /* Ensure play button is above both thumbnail and video */
+    z-index: 2;
+    /* Ensure play button is above both thumbnail and video */
 }
 
 .arrowws {
@@ -376,6 +400,7 @@ html {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
+
 .row2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -426,7 +451,7 @@ html {
     overflow: auto;
     white-space: nowrap;
     scrollbar-width: none;
-    -ms-overflow-style: none; 
+    -ms-overflow-style: none;
 }
 
 .images::-webkit-scrollbar {
@@ -434,7 +459,7 @@ html {
 }
 
 .images img {
-    max-width: 400px;
+    max-width: 400px !important;
     width: 100%;
     height: auto;
     border-radius: 18px;
@@ -443,13 +468,15 @@ html {
     outline: none;
 }
 
-.arrow-2{
+.arrow-2 {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
 }
-.arrow-prev,.arrow-next{
+
+.arrow-prev,
+.arrow-next {
     background-color: #333333;
     width: 40px;
     height: 40px;
@@ -458,14 +485,16 @@ html {
     justify-content: center;
     align-items: center;
 }
-.arrow-prev img,.arrow-next img{
+
+.arrow-prev img,
+.arrow-next img {
     width: 30px;
     height: auto;
 }
- 
- 
 
- 
+
+
+
 .contact-us {
     padding: 40px 0px;
     background-image: url('../image/gradient.png');
@@ -567,7 +596,7 @@ html {
 
 .footer-content {
     display: flex;
- align-items: center;
+    align-items: center;
 
 }
 
@@ -743,9 +772,10 @@ html {
         top: 0;
         padding-top: 20px;
         padding-bottom: 20px;
-        
+
     }
-    .btn-mob{
+
+    .btn-mob {
         height: 27px;
         width: 102px;
         color: #FFFFFF;
@@ -792,10 +822,11 @@ html {
         text-align: center;
         margin-bottom: 80px;
     }
-    .main-title p{
+
+    .main-title p {
         margin-bottom: 60px;
     }
- 
+
 
     .main-section {
         min-height: 100vh;
@@ -815,7 +846,7 @@ html {
         border-radius: 21.41px;
         margin-left: auto;
         margin-right: auto;
-        
+
 
     }
 
@@ -825,41 +856,16 @@ html {
         background: #616363;
         position: relative;
     }
+
     .dot {
         width: 10px;
-        height: 10px; 
+        height: 10px;
         border-radius: 50%;
         cursor: pointer;
-    
+
     }
-    
-    .images img {
-        max-width: 100%;
-        width: 100%;
-        height: auto;
-        border-radius: 18px;
-        user-select: none;
-        /* Prevents text selection on double-click */
-        -webkit-user-drag: none;
-        /* Prevents the default drag behavior in Webkit browsers */
-        outline: none;
-        /* Removes the focus outline */
-    }
-.arrow-2{
-    display: none;
-}
-    .images {
-        padding: 20px 10px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        overflow-y: hidden;
-        overflow-x: hidden;
-        scrollbar-width: none;
-        /* Firefox */
-        -ms-overflow-style: none;
-        /* Internet Explorer 10+ */
-    }
+
+   
 
     .desc {
         font-size: 15px;
@@ -890,7 +896,9 @@ html {
         text-align: center;
         margin: 0;
     }
-    .video img ,.video .video{
+
+    .video img,
+    .video .video {
         max-width: 100%;
         height: 100%;
         object-fit: cover;
@@ -911,14 +919,45 @@ html {
         height: 201px;
     }
 
-     .row2{
+    .row2 {
         gap: 0;
-     }
-     .arrowws img{
+    }
+
+    .arrowws img {
         width: 30px;
         height: 33px;
-     }
-     .main-title{
+    }
+
+    .main-title {
         padding: 0;
-     }
+    }
+    .images img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        border-radius: 18px;
+        user-select: none;
+        /* Prevents text selection on double-click */
+        -webkit-user-drag: none;
+        /* Prevents the default drag behavior in Webkit browsers */
+        outline: none;
+        /* Removes the focus outline */
+    }
+
+    .arrow-2 {
+        display: none;
+    }
+
+    .images {
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* Internet Explorer 10+ */
+    }
 }
