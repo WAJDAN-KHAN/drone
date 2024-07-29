@@ -212,7 +212,7 @@
                 <span style="color: #4862FF;"> Portfolio</span>
             </h1>
         </div>
-        <div class="images">
+        <div class="images" id="imageContainer">
             <img src="./assets/image/car@4x.webp.png" alt="">
             <img src="./assets/image/blowout@4x.webp.png" alt="">
             <img src="./assets/image/DJI_20240301150738_0039_D.JPG" alt="">
@@ -221,7 +221,16 @@
             <img src="./assets/image/CieloVista-11.jpg" alt="">
             <img src="./assets/image/webPic1.jpg" alt="">
         </div>
+        <div class="arrow-2">
+            <div class="arrow-prev">
+                <img src="./assets/image/Arrow-left.png" alt="Left Arrow">
+            </div>
+            <div class="arrow-next">
+                <img src="./assets/image/Arrow-right.png" alt="Right Arrow">
+            </div>
+        </div>
     </section>
+
 
     <section class="contact-us" id="contact-us">
         <div class="container-contact">
@@ -462,38 +471,26 @@
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const imagesContainer = document.querySelector('.images');
+        document.addEventListener('DOMContentLoaded', function () {
+            const imageContainer = document.getElementById('imageContainer');
+            const arrowPrev = document.querySelector('.arrow-prev');
+            const arrowNext = document.querySelector('.arrow-next');
 
-            let isDragging = false;
-            let startX;
-            let scrollLeft;
-
-            imagesContainer.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                imagesContainer.classList.add('active');
-                startX = e.pageX - imagesContainer.offsetLeft;
-                scrollLeft = imagesContainer.scrollLeft;
+            arrowPrev.addEventListener('click', function () {
+                imageContainer.scrollBy({
+                    left: -400, // Adjust this value based on the width of your images
+                    behavior: 'smooth'
+                });
             });
 
-            imagesContainer.addEventListener('mouseleave', () => {
-                isDragging = false;
-                imagesContainer.classList.remove('active');
-            });
-
-            imagesContainer.addEventListener('mouseup', () => {
-                isDragging = false;
-                imagesContainer.classList.remove('active');
-            });
-
-            imagesContainer.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
-                e.preventDefault();
-                const x = e.pageX - imagesContainer.offsetLeft;
-                const walk = (x - startX) * 2; //scroll-fast
-                imagesContainer.scrollLeft = scrollLeft - walk;
+            arrowNext.addEventListener('click', function () {
+                imageContainer.scrollBy({
+                    left: 400, // Adjust this value based on the width of your images
+                    behavior: 'smooth'
+                });
             });
         });
+
     </script>
 
     <script>
