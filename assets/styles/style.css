@@ -845,7 +845,9 @@ html {
         outline: none;
         /* Removes the focus outline */
     }
-
+.arrow-2{
+    display: none;
+}
     .images {
         padding: 20px 10px;
         display: flex;
