@@ -443,7 +443,6 @@ html {
     padding: 40px 0px;
     position: relative;
 }
-
 .images {
     padding-top: 20px;
     display: flex;
@@ -459,7 +458,6 @@ html {
 }
 
 .images img {
-    max-width: 400px;
     width: 100%;
     height: auto;
     border-radius: 18px;
@@ -469,6 +467,12 @@ html {
     flex-shrink: 0; /* Prevent images from shrinking */
 }
 
+/* Media query for screens wider than 600px */
+@media (min-width: 576px) {
+    .images img {
+        width: calc(33.33% - 13.33px); /* Show 3 images */
+    }
+}
 
 .arrow-2 {
     display: flex;
