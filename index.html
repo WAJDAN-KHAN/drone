@@ -473,25 +473,43 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const imageContainer = document.getElementById('imageContainer');
+            const images = imageContainer.querySelectorAll('img');
             const arrowPrev = document.querySelector('.arrow-prev');
             const arrowNext = document.querySelector('.arrow-next');
 
-            arrowPrev.addEventListener('click', function () {
+            let currentIndex = 0;
+
+            function scrollToImage(index) {
+                const image = images[index];
+                const containerRect = imageContainer.getBoundingClientRect();
+                const imageRect = image.getBoundingClientRect();
+                const offset = imageRect.left - containerRect.left - (containerRect.width / 2) + (imageRect.width / 2);
+
                 imageContainer.scrollBy({
-                    left: -400, // Adjust this value based on the width of your images
+                    left: offset,
                     behavior: 'smooth'
                 });
+            }
+
+            arrowPrev.addEventListener('click', function () {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    scrollToImage(currentIndex);
+                }
             });
 
             arrowNext.addEventListener('click', function () {
-                imageContainer.scrollBy({
-                    left: 400, // Adjust this value based on the width of your images
-                    behavior: 'smooth'
-                });
+                if (currentIndex < images.length - 1) {
+                    currentIndex++;
+                    scrollToImage(currentIndex);
+                }
             });
-        });
 
+            // Center the first image on load
+            scrollToImage(currentIndex);
+        });
     </script>
+
 
     <script>
         function sendEmail(event) {
